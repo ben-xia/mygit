@@ -1,4 +1,3 @@
-
 1.初始化一个Git仓库:cd到某个目录,之后使用 git init命令。
 2.用命令git add file 告诉Git，把文件添加到仓库,注意，可反复多次使用，添加多个文件；
 3.用命令git commit -m '本次提交的说明'告诉Git，把文件提交到仓库;
@@ -29,8 +28,10 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 18.要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
 	关联后，使用命令git push -u origin master第一次推送master分支的所有内容；由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
 	此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+19.git clone克隆一个本地库: git clone git@github.com:ben-xia/gitskills.git
+20.github中的Fork:将别人的项目clone一份到自己的github仓库,自己在将此项目clone到自己本地开发;
 
-
+21.分支管理 + 标签管理
 
 
 

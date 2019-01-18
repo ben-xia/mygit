@@ -1,3 +1,4 @@
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 1.初始化一个Git仓库:cd到某个目录,之后使用 git init命令。
 2.用命令git add file 告诉Git，把文件添加到仓库,注意，可反复多次使用，添加多个文件；git add -A：将文件的修改，文件的删除，文件的新建，添加到暂存区。
 3.用命令git commit -m '本次提交的说明'告诉Git，把文件提交到仓库;

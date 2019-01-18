@@ -1,5 +1,5 @@
 1.初始化一个Git仓库:cd到某个目录,之后使用 git init命令。
-2.用命令git add file 告诉Git，把文件添加到仓库,注意，可反复多次使用，添加多个文件；
+2.用命令git add file 告诉Git，把文件添加到仓库,注意，可反复多次使用，添加多个文件；git add -A：将文件的修改，文件的删除，文件的新建，添加到暂存区。
 3.用命令git commit -m '本次提交的说明'告诉Git，把文件提交到仓库;
 4.要随时掌握工作区的状态，使用git status命令
 5.如果git status告诉你有文件被修改过，用git diff file 可以查看修改内容。
@@ -63,8 +63,15 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 		如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
 
 22.标签管理
+	Git的标签虽然是版本库的快照，但其实它就是指向某个commit的指针（跟分支很像对不对？但是分支可以移动，标签不能移动），所以，创建和删除标签都是瞬间完成的。
 
+	本地创建标签:    git tag [-a]<name> [-m '说明文字'] [commit id] (默认标签是打在最新提交的commit上的,也可以选择打在指定的提交上)
+	查看标签列表: git tag (标签不是按时间顺序列出，而是按字母排序的。可以用git show <tagname>查看标签信息)
 
+	命令git push origin <tagname>可以推送一个本地标签到远程仓库；
+	命令git push origin --tags可以推送全部未推送过的本地标签到远程仓库；
+	命令git tag -d <tagname>可以删除一个本地标签；
+	命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
 
 
 

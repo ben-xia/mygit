@@ -45,13 +45,25 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 
 	git log --graph --pretty=oneline --abbrev-commit: 查看分支合并图
 
-	Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作;
-	git stash list:罗列出所以的stash;
-	恢复现场: 一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
-	         另一种方式是用git stash pop，恢复的同时把stash内容也删了：
+	Bug分支: Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作;
+		     git stash list:罗列出所以的stash;
+	         恢复现场: 一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+	                  另一种方式是用git stash pop，恢复的同时把stash内容也删了：
+
+	Feature分支:开发一个新feature,最好新建一个分支;如果要丢弃一个没有被合并过的分支;可以通过git branch -D <name>强行删除。
+
+	当你从远程仓库克隆时,实际上Git自动把本地的master分支和远程的master分支对应起来了,并且远程仓库的默认名称是origin
+	git remote -v:查看远程库的信息,它会显示可以抓取和推送的origin的地址。如果没有推送权限，就看不到push的地址。
+
+	多人协作的工作模式：
+		首先，可以试图用git push origin <branch-name>推送自己的修改；
+		如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+		如果合并有冲突，则解决冲突，并在本地提交；
+		没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+		如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
 
 22.标签管理
-标签
+
 
 
 

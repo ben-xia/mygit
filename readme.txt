@@ -37,7 +37,13 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 	切换分支：git checkout <name>
 	创建+切换分支：git checkout -b <name>
 	合并某分支到当前分支：git merge <name>
+						git merge --no-ff -m "merge with no-ff" dev: ,
+						[Fast forward模式合并分支,会在删除分之后,丢掉分支的信息;--no-ff表示禁用Fast forward模式,此时Git就会在merge后生成一个新的commit，这样，从分支历史上就可以看出分支信息]
 	删除分支：git branch -d <name>
+
+	当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+
+	git log --graph --pretty=oneline --abbrev-commit: 查看分支合并图
 
 22.标签管理
 

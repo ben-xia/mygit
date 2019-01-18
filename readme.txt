@@ -31,10 +31,13 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 19.git clone克隆一个本地库: git clone git@github.com:ben-xia/gitskills.git
 20.github中的Fork:将别人的项目clone一份到自己的github仓库,自己在将此项目clone到自己本地开发;
 
-21.分支管理:
-	21.1.git checkout -b dev: git checkout命令加上-b参数表示创建并切换,相当于以下两条命令：git branch dev,git checkout dev;
-	21.2.用git branch命令查看当前所处的分支;
-
+21.分支管理: 一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点
+	查看分支,当前分支前面会标一个*号。：git branch
+	创建分支：git branch <name>
+	切换分支：git checkout <name>
+	创建+切换分支：git checkout -b <name>
+	合并某分支到当前分支：git merge <name>
+	删除分支：git branch -d <name>
 
 22.标签管理
 

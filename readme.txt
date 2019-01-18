@@ -40,7 +40,6 @@ git checkout -- file命令中的--很重要，没有--，就变成了“切换�
 	删除分支：git branch -d <name>
 
 22.标签管理
-Creating a new branch is quick & simple.
 
 
 
